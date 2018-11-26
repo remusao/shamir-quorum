@@ -1,0 +1,33 @@
+{
+  "name": "secret-collect",
+  "version": "1.0.0",
+  "description": "Using Shamir's secret sharing scheme for private data collection",
+  "main": "client.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "google-closure-compiler": "^20181028.0.1",
+    "rollup": "^0.67.3"
+  },
+  "scripts": {
+    "clean": "rm -rfv dist",
+    "build": "rollup -c rollup.config.js",
+    "minify": "google-closure-compiler --js=./dist/client.umd.js --js_output_file=./dist/client.umd.min.js",
+    "prebuild": "npm run clean",
+    "preminify": "npm run build",
+    "prepack": "npm run minify"
+  },
+  "author": "remi@cliqz.com",
+  "license": "MIT"
+}
